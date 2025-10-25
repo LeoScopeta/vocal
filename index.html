@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vocal Studio — Unlock Your Voice</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Lato", sans-serif;
+      }
+      h1, h2, h3 {
+        font-family: "Playfair Display", serif;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-800">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 bg-white shadow-sm z-50">
+      <div class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+        <h1 class="text-2xl font-bold text-yellow-600">Vocal Studio</h1>
+        <!-- Desktop Nav -->
+        <nav class="space-x-6 hidden md:flex">
+          <a href="#home" class="hover:text-yellow-600">Home</a>
+          <a href="#courses" class="hover:text-yellow-600">Courses</a>
+          <a href="#communities" class="hover:text-yellow-600">Communities</a>
+          <a href="#testimonials" class="hover:text-yellow-600">Testimonials</a>
+        </nav>
+        <a
+          href="/register"
+          class="bg-yellow-600 text-white px-4 py-2 rounded-md hover:bg-yellow-700 transition hidden md:inline-block"
+        >
+          Enroll Now
+        </a>
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden text-yellow-600 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <!-- Mobile Nav -->
+      <div id="mobile-menu" class="hidden bg-gray-50 border-t">
+        <nav class="flex flex-col items-center space-y-4 py-4">
+          <a href="#home" class="hover:text-yellow-600">Home</a>
+          <a href="#courses" class="hover:text-yellow-600">Courses</a>
+          <a href="#communities" class="hover:text-yellow-600">Communities</a>
+          <a href="#testimonials" class="hover:text-yellow-600">Testimonials</a>
+          <a
+            href="/register"
+            class="bg-yellow-600 text-white px-4 py-2 rounded-md hover:bg-yellow-700 transition"
+          >
+            Enroll Now
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section
+      id="home"
+      class="flex flex-col md:flex-row items-center justify-between px-8 md:px-16 py-20 bg-gradient-to-br from-yellow-50 to-white"
+    >
+      <div class="md:w-1/2 text-center md:text-left">
+        <h2 class="text-5xl font-bold mb-4 leading-tight">
+          Unlock the Power of Your Voice
+        </h2>
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+          Join thousands of aspiring singers who have transformed their sound
+          through professional training, guidance, and community support.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+          <a
+            href="/register"
+            class="bg-yellow-600 text-white px-6 py-3 rounded-md hover:bg-yellow-700 transition font-semibold text-lg"
+          >
+            Start Learning
+          </a>
+          <a
+            href="#courses"
+            class="border-2 border-yellow-600 text-yellow-600 px-6 py-3 rounded-md hover:bg-yellow-50 transition font-semibold text-lg"
+          >
+            Explore Courses
+          </a>
+        </div>
+      </div>
+      <div class="md:w-1/2 mt-12 md:mt-0">
+        <img
+          src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1000&q=80"
+          alt="Singer practicing"
+          class="rounded-xl shadow-lg w-full object-cover"
+        />
+      </div>
+    </section>
+
+    <!-- Courses -->
+    <section id="courses" class="px-8 md:px-16 py-20 bg-white">
+      <h2 class="text-4xl font-bold text-center mb-12">Our Courses</h2>
+      <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+        <div class="border rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition hover:-translate-y-1">
+          <img
+            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=60"
+            alt="Beginner Course"
+            class="h-56 w-full object-cover"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Beginner's Voice Training</h3>
+            <p class="text-gray-600 mb-4">
+              Learn the fundamentals of breathing, tone, and pitch with personalized guidance.
+            </p>
+            <a href="/course/beginner" class="text-yellow-600 font-semibold hover:underline">Learn more →</a>
+          </div>
+        </div>
+
+        <div class="border rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition hover:-translate-y-1">
+          <img
+            src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=60"
+            alt="Intermediate Course"
+            class="h-56 w-full object-cover"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Intermediate Technique</h3>
+            <p class="text-gray-600 mb-4">
+              Strengthen your voice and develop confident stage expression and endurance.
+            </p>
+            <a href="/course/intermediate" class="text-yellow-600 font-semibold hover:underline">Learn more →</a>
+          </div>
+        </div>
+
+        <div class="border rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition hover:-translate-y-1">
+          <img
+            src="https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=800&q=60"
+            alt="Advanced Course"
+            class="h-56 w-full object-cover"
+          />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Advanced Performance</h3>
+            <p class="text-gray-600 mb-4">
+              Master advanced techniques, interpretation, and professional performance skills.
+            </p>
+            <a href="/course/advanced" class="text-yellow-600 font-semibold hover:underline">Learn more →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Communities -->
+    <section id="communities" class="px-8 md:px-16 py-20 bg-gray-50">
+      <h2 class="text-4xl font-bold text-center mb-12">Join Our WhatsApp Communities</h2>
+      <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+        Connect with singers worldwide, share progress, and receive feedback in our vibrant WhatsApp groups tailored for every singing style.
+      </p>
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="p-6 border rounded-xl bg-white text-center shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-3 text-yellow-700">Pop Vocalists</h3>
+          <p class="text-gray-600 mb-4">Exchange tips and challenges with passionate pop singers.</p>
+          <a href="#" class="bg-yellow-600 text-white px-4 py-2 rounded-md hover:bg-yellow-700 transition">Join Now</a>
+        </div>
+        <div class="p-6 border rounded-xl bg-white text-center shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-3 text-yellow-700">Classical & Opera</h3>
+          <p class="text-gray-600 mb-4">Dive deep into classical voice training and interpretation.</p>
+          <a href="#" class="bg-yellow-600 text-white px-4 py-2 rounded-md hover:bg-yellow-700 transition">Join Now</a>
+        </div>
+        <div class="p-6 border rounded-xl bg-white text-center shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-3 text-yellow-700">Contemporary Artists</h3>
+          <p class="text-gray-600 mb-4">Collaborate and learn with versatile modern vocalists.</p>
+          <a href="#" class="bg-yellow-600 text-white px-4 py-2 rounded-md hover:bg-yellow-700 transition">Join Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="px-8 md:px-16 py-20 bg-white">
+      <h2 class="text-4xl font-bold text-center mb-12">What Our Students Say</h2>
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="p-6 border rounded-xl shadow-sm bg-gray-50 hover:shadow-md transition">
+          <p class="text-gray-700 italic mb-4">
+            "After just a few months, I feel confident performing live again. The lessons truly changed how I use my voice."
+          </p>
+          <p class="font-semibold text-yellow-600">— Laura M.</p>
+        </div>
+        <div class="p-6 border rounded-xl shadow-sm bg-gray-50 hover:shadow-md transition">
+          <p class="text-gray-700 italic mb-4">
+            "The one-on-one coaching fixed years of bad habits. My range and tone have improved drastically."
+          </p>
+          <p class="font-semibold text-yellow-600">— Daniel P.</p>
+        </div>
+        <div class="p-6 border rounded-xl shadow-sm bg-gray-50 hover:shadow-md transition">
+          <p class="text-gray-700 italic mb-4">
+            "Joining the community made all the difference. I’ve met amazing singers who inspire me daily."
+          </p>
+          <p class="font-semibold text-yellow-600">— Sofia R.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-10 text-center">
+      <div class="flex justify-center space-x-6 mb-6">
+        <a href="#" class="hover:text-yellow-600" aria-label="Instagram" title="Instagram">
+          <svg class="w-6 h-6 inline" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M7.5 2A5.5 5.5 0 002 7.5v9A5.5 5.5 0 007.5 22h9a5.5 5.5 0 005.5-5.5v-9A5.5 5.5 0 0016.5 2h-9zM12 7a5 5 0 110 10 5 5 0 010-10zm6.75.5a1.25 1.25 0 11-2.5 0 1.25 1.25 0 012.5 0zM12 9a3 3 0 100 6 3 3 0 000-6z"
+            />
+          </svg>
+        </a>
+        <a href="#" class="hover:text-yellow-600" aria-label="YouTube" title="YouTube">
+          <svg class="w-6 h-6 inline" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M10 15l5.19-3L10 9v6zm12-3c0-2.12-.17-3.72-.44-4.9-.27-1.23-1.1-2.06-2.33-2.33C17.05 4.5 12 4.5 12 4.5s-5.05 0-7.23.27c-1.23.27-2.06 1.1-2.33 2.33C2.17 8.28 2 9.88 2 12s.17 3.72.44 4.9c.27 1.23 1.1 2.06 2.33 2.33C6.95 19.5 12 19.5 12 19.5s5.05 0 7.23-.27c1.23-.27 2.06-1.1 2.33-2.33.27-1.18.44-2.78.44-4.9z"
+            />
+          </svg>
+        </a>
+        <a href="#" class="hover:text-yellow-600" aria-label="TikTok" title="TikTok">
+          <svg class="w-6 h-6 inline" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M16.7 8.13a5.73 5.73 0 01-1.54-.21V14a4.68 4.68 0 11-4.68-4.68c.25 0 .5.02.74.05V7.8a8.04 8.04 0 00-.74-.03A6.89 6.89 0 009 21a6.89 6.89 0 006.89-6.89V9.93a7.3 7.3 0 003.81 1.05V8.13h-3.01z"
+            />
+          </svg>
+        </a>
+      </div>
+      <p>&copy; 2025 Vocal Studio. All rights reserved.</p>
+    </footer>
+
+    <script>
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>

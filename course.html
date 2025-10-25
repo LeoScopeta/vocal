@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course - Master Your Voice</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+  <!-- Navbar -->
+  <nav class="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <a href="/" class="text-2xl font-bold text-blue-600">🎤 Vocal Academy</a>
+
+        <div class="hidden md:flex space-x-6">
+          <a href="/courses.html" class="text-gray-700 hover:text-blue-600 transition">Courses</a>
+          <a href="/community.html" class="text-gray-700 hover:text-blue-600 transition">Community</a>
+          <a href="/resources.html" class="text-gray-700 hover:text-blue-600 transition">Resources</a>
+        </div>
+
+        <img src="https://i.pravatar.cc/40" alt="Profile" class="hidden md:block w-10 h-10 rounded-full border">
+      </div>
+    </div>
+  </nav>
+
+  <!-- Course Section -->
+  <main class="flex-1 p-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-6 mt-4">
+    <!-- Main Video Section -->
+    <section class="lg:col-span-3 bg-white rounded-xl shadow p-4 flex flex-col">
+      <div class="aspect-video w-full mb-4 rounded-lg overflow-hidden">
+        <iframe id="course-video"
+          src="https://www.youtube.com/embed/7aQv8eKxVZs"
+          title="YouTube video player"
+          frameborder="0"
+          allowfullscreen
+          class="w-full h-full">
+        </iframe>
+      </div>
+
+      <h1 id="lesson-title" class="text-2xl font-bold text-gray-800 mb-2">Lesson 1: Breathing & Posture</h1>
+      <p id="lesson-description" class="text-gray-600 mb-4">
+        Learn fundamental breathing and posture techniques to improve your vocal tone and sustain.
+      </p>
+
+      <div class="mt-auto flex justify-between items-center border-t pt-3 text-sm text-gray-500">
+        <span id="lesson-duration">Duration: 12:34</span>
+        <button class="text-blue-600 hover:underline">Next Lesson →</button>
+      </div>
+    </section>
+
+    <!-- Sidebar - Playlist -->
+    <aside class="bg-white rounded-xl shadow p-4">
+      <h2 class="text-lg font-semibold text-gray-800 mb-3">Course Lessons</h2>
+      <ul id="lesson-list" class="space-y-3">
+        <li class="lesson-item flex items-center gap-3 p-2 rounded-lg cursor-pointer bg-blue-50"
+            data-url="https://www.youtube.com/embed/7aQv8eKxVZs"
+            data-title="Lesson 1: Breathing & Posture"
+            data-desc="Learn fundamental breathing and posture techniques to improve your vocal tone and sustain."
+            data-duration="12:34">
+          <div class="w-10 h-10 bg-blue-200 rounded-lg flex items-center justify-center text-blue-700 font-bold">1</div>
+          <div>
+            <p class="text-sm font-semibold text-blue-700">Breathing & Posture</p>
+            <p class="text-xs text-gray-500">12:34 min</p>
+          </div>
+        </li>
+
+        <li class="lesson-item flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 cursor-pointer"
+            data-url="https://www.youtube.com/embed/YQHsXMglC9A"
+            data-title="Lesson 2: Vocal Warm-ups"
+            data-desc="Daily routines to warm up your vocal cords and improve tone consistency."
+            data-duration="09:48">
+          <div class="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-gray-700 font-bold">2</div>
+          <div>
+            <p class="text-sm font-semibold text-gray-700">Vocal Warm-ups</p>
+            <p class="text-xs text-gray-500">09:48 min</p>
+          </div>
+        </li>
+
+        <li class="lesson-item flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 cursor-pointer"
+            data-url="https://www.youtube.com/embed/jfKfPfyJRdk"
+            data-title="Lesson 3: Pitch Control"
+            data-desc="Develop precision and confidence in your vocal pitch through targeted exercises."
+            data-duration="10:22">
+          <div class="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-gray-700 font-bold">3</div>
+          <div>
+            <p class="text-sm font-semibold text-gray-700">Pitch Control</p>
+            <p class="text-xs text-gray-500">10:22 min</p>
+          </div>
+        </li>
+
+        <li class="lesson-item flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 cursor-pointer"
+            data-url="https://www.youtube.com/embed/aqz-KE-bpKQ"
+            data-title="Lesson 4: Expressive Singing"
+            data-desc="Learn how to express emotion and dynamics to captivate your audience."
+            data-duration="11:05">
+          <div class="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-gray-700 font-bold">4</div>
+          <div>
+            <p class="text-sm font-semibold text-gray-700">Expressive Singing</p>
+            <p class="text-xs text-gray-500">11:05 min</p>
+          </div>
+        </li>
+      </ul>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white py-4 text-center text-gray-500 text-sm border-t mt-8">
+    © 2025 Vocal Academy. All rights reserved.
+  </footer>
+
+  <script>
+    const lessons = document.querySelectorAll('.lesson-item');
+    const video = document.getElementById('course-video');
+    const title = document.getElementById('lesson-title');
+    const desc = document.getElementById('lesson-description');
+    const duration = document.getElementById('lesson-duration');
+
+    lessons.forEach((item) => {
+      item.addEventListener('click', () => {
+        // Update main video
+        video.src = item.dataset.url;
+        title.innerText = item.dataset.title;
+        desc.innerText = item.dataset.desc;
+        duration.innerText = `Duration: ${item.dataset.duration}`;
+
+        // Reset active state
+        lessons.forEach((el) => {
+          el.classList.remove('bg-blue-50');
+          el.querySelector('div:first-child').classList.remove('bg-blue-200', 'text-blue-700');
+          el.querySelector('div:first-child').classList.add('bg-gray-200', 'text-gray-700');
+          el.querySelector('p.text-sm').classList.remove('text-blue-700');
+          el.querySelector('p.text-sm').classList.add('text-gray-700');
+        });
+
+        // Apply active state to selected
+        item.classList.add('bg-blue-50');
+        item.querySelector('div:first-child').classList.remove('bg-gray-200', 'text-gray-700');
+        item.querySelector('div:first-child').classList.add('bg-blue-200', 'text-blue-700');
+        item.querySelector('p.text-sm').classList.remove('text-gray-700');
+        item.querySelector('p.text-sm').classList.add('text-blue-700');
+      });
+    });
+  </script>
+</body>
+</html>
