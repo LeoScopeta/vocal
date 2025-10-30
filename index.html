@@ -20,51 +20,102 @@
   </head>
   <body class="bg-white text-gray-800">
 
-    <!-- Navbar -->
-    <header class="sticky top-0 bg-white shadow-sm z-50">
-      <div class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
-        <h1 class="text-2xl font-bold text-yellow-600">Vocal Studio</h1>
-        <!-- Desktop Nav -->
-        <nav class="space-x-6 hidden md:flex">
-          <a href="#home" class="hover:text-yellow-600">Home</a>
-          <a href="#courses" class="hover:text-yellow-600">Courses</a>
-          <a href="#communities" class="hover:text-yellow-600">Communities</a>
-          <a href="#testimonials" class="hover:text-yellow-600">Testimonials</a>
-        </nav>
-        <a
-          href="/register"
-          class="bg-yellow-600 text-white px-4 py-2 rounded-md hover:bg-yellow-700 transition hidden md:inline-block"
-        >
-          Enroll Now
-        </a>
-        <!-- Mobile Menu Button -->
-        <button id="menu-btn" class="md:hidden text-yellow-600 focus:outline-none">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-      <!-- Mobile Nav -->
-      <div id="mobile-menu" class="hidden bg-gray-50 border-t">
-        <nav class="flex flex-col items-center space-y-4 py-4">
-          <a href="#home" class="hover:text-yellow-600">Home</a>
-          <a href="#courses" class="hover:text-yellow-600">Courses</a>
-          <a href="#communities" class="hover:text-yellow-600">Communities</a>
-          <a href="#testimonials" class="hover:text-yellow-600">Testimonials</a>
-          <a
-            href="/register"
-            class="bg-yellow-600 text-white px-4 py-2 rounded-md hover:bg-yellow-700 transition"
-          >
-            Enroll Now
-          </a>
-        </nav>
-      </div>
-    </header>
+    
+    <nav class="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
 
-    <!-- Hero -->
+      <!-- Left Section: Logo -->
+      <a href="/" class="flex items-center space-x-2">
+        <span class="text-2xl font-bold text-yellow-600">🎤 Vocal Academy</span>
+      </a>
+
+      <!-- Center Section: Menu Links -->
+      <div class="hidden md:flex space-x-6">
+        <a href="/courses.html" class="text-gray-700 hover:text-yellow-600 transition">Courses</a>
+        <a href="/" class="text-gray-700 hover:text-yellow-600">Home</a>
+        <a href="/dashboard.html" class="text-gray-700 hover:text-yellow-600">My Courses</a>
+        <a href="/about.html" class="text-gray-700 hover:text-yellow-600 transition">About</a>
+      </div>
+
+      <!-- Right Section: User / Login -->
+      <div class="hidden md:flex items-center space-x-4">
+        <!-- When user is logged out -->
+        <div id="guest-nav" class="flex items-center space-x-4">
+          <a href="/login.html" class="text-gray-700 hover:text-yellow-600">Login</a>
+          <a href="/signin.html"
+             class="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition">
+            Sign Up
+          </a>
+        </div>
+
+        <!-- When user is logged in -->
+        <div id="user-nav" class="hidden items-center space-x-3">
+          <a href="/dashboard.html" class="text-gray-700 hover:text-yellow-600 transition">Dashboard</a>
+          <img src="https://i.pravatar.cc/40" alt="Profile"
+               class="w-10 h-10 rounded-full border cursor-pointer">
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-toggle"
+              class="md:hidden text-gray-600 hover:text-yellow-600 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white">
+    <div class="flex flex-col p-4 space-y-3">
+      <a href="/courses.html" class="text-gray-700 hover:text-yellow-600">Courses</a>
+      <a href="/" class="text-gray-700 hover:text-yellow-600">Home</a>
+      <a href="/dashboard.html" class="text-gray-700 hover:text-yellow-600">My Courses</a>
+      <a href="/about.html" class="text-gray-700 hover:text-yellow-600">About</a>
+
+      <hr>
+
+      <!-- Mobile auth links -->
+      <div id="mobile-guest" class="flex flex-col space-y-2">
+        <a href="/login.html" class="text-gray-700 hover:text-yellow-600">Login</a>
+        <a href="/register.html" class="bg-yellow-600 text-white text-center py-2 rounded-lg hover:bg-yellow-700 transition">
+          Sign Up
+        </a>
+      </div>
+      <div id="mobile-user" class="hidden flex flex-col space-y-2">
+        <a href="/dashboard.html" class="text-gray-700 hover:text-yellow-600">Dashboard</a>
+        <a href="/logout" class="text-gray-700 hover:text-red-600">Logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Toggle mobile menu
+  document.getElementById("menu-toggle").addEventListener("click", () => {
+    document.getElementById("mobile-menu").classList.toggle("hidden");
+  });
+
+  // Simulated login state
+  const loggedIn = false; // change to true to simulate
+
+  // Handle nav state
+  if (loggedIn) {
+    document.getElementById("guest-nav").classList.add("hidden");
+    document.getElementById("user-nav").classList.remove("hidden");
+    document.getElementById("mobile-guest").classList.add("hidden");
+    document.getElementById("mobile-user").classList.remove("hidden");
+  }
+</script>
+
+    
     <section
       id="home"
-      class="flex flex-col md:flex-row items-center justify-between px-8 md:px-16 py-20 bg-gradient-to-br from-yellow-50 to-white"
+      class="flex flex-col md:flex-row items-center justify-between px-8 md:px-16 py-20 bg-gradient-to-br from-[var(--background-secondary)] to-white"
     >
       <div class="md:w-1/2 text-center md:text-left">
         <h2 class="text-5xl font-bold mb-4 leading-tight">
@@ -83,7 +134,7 @@
           </a>
           <a
             href="#courses"
-            class="border-2 border-yellow-600 text-yellow-600 px-6 py-3 rounded-md hover:bg-yellow-50 transition font-semibold text-lg"
+            class="border-2 border-yellow-600 text-yellow-600 px-6 py-3 rounded-md hover:bg-[var(--background-secondary)] transition font-semibold text-lg"
           >
             Explore Courses
           </a>
@@ -98,58 +149,8 @@
       </div>
     </section>
 
-    <!-- Courses -->
-    <section id="courses" class="px-8 md:px-16 py-20 bg-white">
-      <h2 class="text-4xl font-bold text-center mb-12">Our Courses</h2>
-      <div class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-        <div class="border rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition hover:-translate-y-1">
-          <img
-            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=800&q=60"
-            alt="Beginner Course"
-            class="h-56 w-full object-cover"
-          />
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Beginner's Voice Training</h3>
-            <p class="text-gray-600 mb-4">
-              Learn the fundamentals of breathing, tone, and pitch with personalized guidance.
-            </p>
-            <a href="/course/beginner" class="text-yellow-600 font-semibold hover:underline">Learn more →</a>
-          </div>
-        </div>
 
-        <div class="border rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition hover:-translate-y-1">
-          <img
-            src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=60"
-            alt="Intermediate Course"
-            class="h-56 w-full object-cover"
-          />
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Intermediate Technique</h3>
-            <p class="text-gray-600 mb-4">
-              Strengthen your voice and develop confident stage expression and endurance.
-            </p>
-            <a href="/course/intermediate" class="text-yellow-600 font-semibold hover:underline">Learn more →</a>
-          </div>
-        </div>
-
-        <div class="border rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition hover:-translate-y-1">
-          <img
-            src="https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=800&q=60"
-            alt="Advanced Course"
-            class="h-56 w-full object-cover"
-          />
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Advanced Performance</h3>
-            <p class="text-gray-600 mb-4">
-              Master advanced techniques, interpretation, and professional performance skills.
-            </p>
-            <a href="/course/advanced" class="text-yellow-600 font-semibold hover:underline">Learn more →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Communities -->
+    
     <section id="communities" class="px-8 md:px-16 py-20 bg-gray-50">
       <h2 class="text-4xl font-bold text-center mb-12">Join Our WhatsApp Communities</h2>
       <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
@@ -174,7 +175,7 @@
       </div>
     </section>
 
-    <!-- Testimonials -->
+    
     <section id="testimonials" class="px-8 md:px-16 py-20 bg-white">
       <h2 class="text-4xl font-bold text-center mb-12">What Our Students Say</h2>
       <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -199,7 +200,7 @@
       </div>
     </section>
 
-    <!-- Footer -->
+    
     <footer class="bg-gray-900 text-gray-300 py-10 text-center">
       <div class="flex justify-center space-x-6 mb-6">
         <a href="#" class="hover:text-yellow-600" aria-label="Instagram" title="Instagram">
