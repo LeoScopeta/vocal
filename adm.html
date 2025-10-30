@@ -53,7 +53,21 @@
           </div>
         </div>
       </section>
-<section id="edit-course" class="section hidden"></section>
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Price (R$)</label>
+      <input type="number" class="w-full p-2 border rounded" value="129" />
+    </div>
+
+    <section id="edit-course" class="section hidden">
+  <div class="flex justify-between items-center mb-4">
+    <h2 class="text-3xl font-bold">✏️ Edit Course</h2>
+    <button onclick="showSection(event, 'courses')" class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300">
+      ← Back
+    </button>
+  </div>
+
+  <div class="bg-white shadow rounded-lg p-6 space-y-6">
+    <!-- Price -->
     <div>
       <label class="block text-sm font-medium text-gray-700">Price (R$)</label>
       <input type="number" class="w-full p-2 border rounded" value="129" />
@@ -67,7 +81,7 @@
       <div class="flex flex-col md:flex-row md:space-x-2 space-y-2 md:space-y-0">
         <input id="videoTitle" placeholder="Video Title" class="flex-1 p-2 border rounded" />
         <input id="videoUrl" placeholder="YouTube URL" class="flex-1 p-2 border rounded" />
-        <button id="addVideoBtn" onclick="showSection('edit-course')"
+        <button id="addVideoBtn" onclick="addVideo()"
           class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700">
           + Add
         </button>
@@ -87,6 +101,7 @@
     </div>
   </div>
 </section>
+
 
 
       <!-- Testimonials -->
