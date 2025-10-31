@@ -1,178 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login / Signup</title>
+  <title>Entrar / Cadastrar-se</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <nav class="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-16">
+  <nav class="bg-[var(--background)] border-b border-gray-200 shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
 
-      <!-- Left Section: Logo -->
-      <a href=".." class="flex items-center space-x-2">
-        <span class="text-2xl font-bold text-yellow-600">🎤 Vocal Academy</span>
-      </a>
+        <!-- Left Section: Logo -->
+        <a href=".." class="flex items-center space-x-2">
+          <span class="text-2xl font-bold text-yellow-600">🎤 Academia Vocal</span>
+        </a>
 
-      <!-- Center Section: Menu Links -->
-      <div class="hidden md:flex space-x-6">
-        <a href="courses.html" class="text-gray-700 hover:text-yellow-600 transition">Courses</a>
-        <a href=".." class="text-gray-700 hover:text-yellow-600">Home</a>
-        <a href="dashboard.html" class="text-gray-700 hover:text-yellow-600">My Courses</a>
-        <a href="about.html" class="text-gray-700 hover:text-yellow-600 transition">About</a>
+        <!-- Center Section: Menu Links -->
+        <div class="hidden md:flex space-x-6">
+          <a href="courses.html" class=" hover:text-yellow-600 transition">Cursos</a>
+          <a href=".." class=" hover:text-yellow-600">Início</a>
+          <a href="dashboard.html" class=" hover:text-yellow-600">Meus Cursos</a>
+          <a href="about.html" class=" hover:text-yellow-600 transition">Sobre</a>
+        </div>
+
+        <!-- Right Section: User / Login -->
+        <div class="hidden md:flex items-center space-x-4">
+          <!-- When user is logged out -->
+          <div id="guest-nav" class="flex items-center space-x-4">
+            <a href="login.html" class=" hover:text-yellow-600">Entrar</a>
+            <a href="signin.html" class="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition">
+              Cadastrar-se
+            </a>
+          </div>
+
+          <!-- When user is logged in -->
+          <div id="user-nav" class="hidden items-center space-x-3">
+            <a href="dashboard.html" class=" hover:text-yellow-600 transition">Painel</a>
+            <img src="https://i.pravatar.cc/40" alt="Perfil" class="w-10 h-10 rounded-full border cursor-pointer">
+          </div>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-toggle" class="md:hidden  hover:text-yellow-600 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
       </div>
+    </div>
 
-      <!-- Right Section: User / Login -->
-      <div class="hidden md:flex items-center space-x-4">
-        <!-- When user is logged out -->
-        <div id="guest-nav" class="flex items-center space-x-4">
-          <a href="login.html" class="text-gray-700 hover:text-yellow-600">Login</a>
-          <a href="signin.html"
-             class="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition">
-            Sign Up
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-[var(--background)]">
+      <div class="flex flex-col p-4 space-y-3">
+        <a href="courses.html" class=" hover:text-yellow-600">Cursos</a>
+        <a href=".." class=" hover:text-yellow-600">Início</a>
+        <a href="dashboard.html" class=" hover:text-yellow-600">Meus Cursos</a>
+        <a href="about.html" class=" hover:text-yellow-600">Sobre</a>
+
+        <hr>
+
+        <!-- Mobile auth links -->
+        <div id="mobile-guest" class="flex flex-col space-y-2">
+          <a href="login.html" class=" hover:text-yellow-600">Entrar</a>
+          <a href="login.html"
+            class="bg-yellow-600 text-white text-center py-2 rounded-lg hover:bg-yellow-700 transition">
+            Cadastrar-se
           </a>
         </div>
-
-        <!-- When user is logged in -->
-        <div id="user-nav" class="hidden items-center space-x-3">
-          <a href="dashboard.html" class="text-gray-700 hover:text-yellow-600 transition">Dashboard</a>
-          <img src="https://i.pravatar.cc/40" alt="Profile"
-               class="w-10 h-10 rounded-full border cursor-pointer">
+        <div id="mobile-user" class="hidden flex flex-col space-y-2">
+          <a href="dashboard.html" class=" hover:text-yellow-600">Painel</a>
+          <a href="logout" class=" hover:text-red-600">Sair</a>
         </div>
       </div>
-
-      <!-- Mobile Menu Button -->
-      <button id="menu-toggle"
-              class="md:hidden text-gray-600 hover:text-yellow-600 focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-
     </div>
-  </div>
-
-  <!-- Mobile Dropdown -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white">
-    <div class="flex flex-col p-4 space-y-3">
-      <a href="courses.html" class="text-gray-700 hover:text-yellow-600">Courses</a>
-      <a href=".." class="text-gray-700 hover:text-yellow-600">Home</a>
-      <a href="dashboard.html" class="text-gray-700 hover:text-yellow-600">My Courses</a>
-      <a href="about.html" class="text-gray-700 hover:text-yellow-600">About</a>
-
-      <hr>
-
-      <!-- Mobile auth links -->
-      <div id="mobile-guest" class="flex flex-col space-y-2">
-        <a href="login.html" class="text-gray-700 hover:text-yellow-600">Login</a>
-        <a href="login.html" class="bg-yellow-600 text-white text-center py-2 rounded-lg hover:bg-yellow-700 transition">
-          Sign Up
-        </a>
-      </div>
-      <div id="mobile-user" class="hidden flex flex-col space-y-2">
-        <a href="dashboard.html" class="text-gray-700 hover:text-yellow-600">Dashboard</a>
-        <a href="logout" class="text-gray-700 hover:text-red-600">Logout</a>
-      </div>
-    </div>
-  </div>
-</nav>
-<script>
-  // Toggle mobile menu
-  document.getElementById("menu-toggle").addEventListener("click", () => {
-    document.getElementById("mobile-menu").classList.toggle("hidden");
-  });
-
-  // Simulated login state
-  const loggedIn = false; // change to true to simulate
-
-  // Handle nav state
-  if (loggedIn) {
-    document.getElementById("guest-nav").classList.add("hidden");
-    document.getElementById("user-nav").classList.remove("hidden");
-    document.getElementById("mobile-guest").classList.add("hidden");
-    document.getElementById("mobile-user").classList.remove("hidden");
-  }
-</script>
-<div class="bg-gray-50 flex items-center justify-center min-h-screen">
-
-  <!-- Container -->
-  <div class="bg-white shadow-lg rounded-lg max-w-md w-full p-8 space-y-6">
-
-    <!-- Tabs -->
-    <div class="flex justify-center space-x-4 mb-6">
-      <button id="loginTab" class="text-yellow-600 font-bold border-b-2 border-yellow-600 pb-1">Login</button>
-      <button id="signupTab" class="text-gray-500 font-medium pb-1">Sign Up</button>
-    </div>
-
-    <!-- Login Form -->
-    <form id="loginForm" class="space-y-4">
-      <div>
-        <label class="block text-sm font-medium text-gray-700">Email</label>
-        <input type="email" class="w-full p-2 border rounded mt-1" placeholder="you@example.com" required>
-      </div>
-      <div>
-        <label class="block text-sm font-medium text-gray-700">Password</label>
-        <input type="password" class="w-full p-2 border rounded mt-1" placeholder="********" required>
-      </div>
-      <button type="submit" class="w-full bg-yellow-600 text-white py-2 rounded hover:bg-yellow-700">Login</button>
-      <p class="text-sm text-gray-500 text-center">Don't have an account? <span id="switchToSignup" class="text-yellow-600 cursor-pointer hover:underline">Sign Up</span></p>
-    </form>
-
-    <!-- Signup Form -->
-    <form id="signupForm" class="space-y-4 hidden">
-      <div>
-        <label class="block text-sm font-medium text-gray-700">Full Name</label>
-        <input type="text" class="w-full p-2 border rounded mt-1" placeholder="John Doe" required>
-      </div>
-      <div>
-        <label class="block text-sm font-medium text-gray-700">Email</label>
-        <input type="email" class="w-full p-2 border rounded mt-1" placeholder="you@example.com" required>
-      </div>
-      <div>
-        <label class="block text-sm font-medium text-gray-700">Password</label>
-        <input type="password" class="w-full p-2 border rounded mt-1" placeholder="********" required>
-      </div>
-      <button type="submit" class="w-full bg-yellow-600 text-white py-2 rounded hover:bg-yellow-700">Sign Up</button>
-      <p class="text-sm text-gray-500 text-center">Already have an account? <span id="switchToLogin" class="text-yellow-600 cursor-pointer hover:underline">Login</span></p>
-    </form>
-
-  </div>
-
+  </nav>
   <script>
-    const loginTab = document.getElementById('loginTab');
-    const signupTab = document.getElementById('signupTab');
-    const loginForm = document.getElementById('loginForm');
-    const signupForm = document.getElementById('signupForm');
-
-    const switchToSignup = document.getElementById('switchToSignup');
-    const switchToLogin = document.getElementById('switchToLogin');
-
-    // Tab click handlers
-    loginTab.addEventListener('click', () => {
-      loginTab.classList.replace('text-gray-500', 'text-yellow-600');
-      loginTab.classList.add('font-bold', 'border-b-2', 'border-yellow-600');
-      signupTab.classList.replace('text-yellow-600', 'text-gray-500');
-      signupTab.classList.remove('font-bold', 'border-b-2', 'border-yellow-600');
-      loginForm.classList.remove('hidden');
-      signupForm.classList.add('hidden');
+    // Toggle mobile menu
+    document.getElementById("menu-toggle").addEventListener("click", () => {
+      document.getElementById("mobile-menu").classList.toggle("hidden");
     });
 
-    signupTab.addEventListener('click', () => {
-      signupTab.classList.replace('text-gray-500', 'text-yellow-600');
-      signupTab.classList.add('font-bold', 'border-b-2', 'border-yellow-600');
-      loginTab.classList.replace('text-yellow-600', 'text-gray-500');
-      loginTab.classList.remove('font-bold', 'border-b-2', 'border-yellow-600');
-      signupForm.classList.remove('hidden');
-      loginForm.classList.add('hidden');
-    });
+    // Simulated login state
+    const loggedIn = false; // change to true to simulate
 
-    // Link inside forms
-    switchToSignup.addEventListener('click', () => signupTab.click());
-    switchToLogin.addEventListener('click', () => loginTab.click());
+    // Handle nav state
+    if (loggedIn) {
+      document.getElementById("guest-nav").classList.add("hidden");
+      document.getElementById("user-nav").classList.remove("hidden");
+      document.getElementById("mobile-guest").classList.add("hidden");
+      document.getElementById("mobile-user").classList.remove("hidden");
+    }
   </script>
+  <div class="bg-[var(--background-secondary)] flex items-center justify-center min-h-screen">
+
+    <!-- Container -->
+    <div class="bg-[var(--background)] shadow-lg rounded-lg max-w-md w-full p-8 space-y-6">
+
+      <!-- Tabs -->
+      <div class="flex justify-center space-x-4 mb-6">
+        <button id="loginTab" class="text-yellow-600 font-bold border-b-2 border-yellow-600 pb-1">Entrar</button>
+        <button id="signupTab" class=" font-medium pb-1">Cadastrar-se</button>
+      </div>
+
+      <!-- Login Form -->
+      <form id="loginForm" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium ">Email</label>
+          <input type="email" class="w-full p-2 border rounded mt-1" placeholder="voce@exemplo.com" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium ">Senha</label>
+          <input type="password" class="w-full p-2 border rounded mt-1" placeholder="********" required>
+        </div>
+        <button type="submit" class="w-full bg-yellow-600 text-white py-2 rounded hover:bg-yellow-700">Entrar</button>
+        <p class="text-sm  text-center">Não tem uma conta? <span id="switchToSignup"
+            class="text-yellow-600 cursor-pointer hover:underline">Cadastrar-se</span></p>
+      </form>
+
+      <!-- Signup Form -->
+      <form id="signupForm" class="space-y-4 hidden">
+        <div>
+          <label class="block text-sm font-medium ">Nome Completo</label>
+          <input type="text" class="w-full p-2 border rounded mt-1" placeholder="João Silva" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium ">Email</label>
+          <input type="email" class="w-full p-2 border rounded mt-1" placeholder="voce@exemplo.com" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium ">Senha</label>
+          <input type="password" class="w-full p-2 border rounded mt-1" placeholder="********" required>
+        </div>
+        <button type="submit"
+          class="w-full bg-yellow-600 text-white py-2 rounded hover:bg-yellow-700">Cadastrar-se</button>
+        <p class="text-sm  text-center">Já tem uma conta? <span id="switchToLogin"
+            class="text-yellow-600 cursor-pointer hover:underline">Entrar</span></p>
+      </form>
+
+    </div>
+
+    <script>
+      const loginTab = document.getElementById('loginTab');
+      const signupTab = document.getElementById('signupTab');
+      const loginForm = document.getElementById('loginForm');
+      const signupForm = document.getElementById('signupForm');
+
+      const switchToSignup = document.getElementById('switchToSignup');
+      const switchToLogin = document.getElementById('switchToLogin');
+
+      // Tab click handlers
+      loginTab.addEventListener('click', () => {
+        // Ativa o tab de login
+        loginTab.classList.add('text-yellow-600', 'font-bold', 'border-b-2', 'border-yellow-600');
+        signupTab.classList.remove('text-yellow-600', 'font-bold', 'border-b-2', 'border-yellow-600');
+
+        // Mostra o formulário de login e esconde o de cadastro
+        loginForm.classList.remove('hidden');
+        signupForm.classList.add('hidden');
+      });
+
+      signupTab.addEventListener('click', () => {
+        // Ativa o tab de cadastro
+        signupTab.classList.add('text-yellow-600', 'font-bold', 'border-b-2', 'border-yellow-600');
+        loginTab.classList.remove('text-yellow-600', 'font-bold', 'border-b-2', 'border-yellow-600');
+
+        // Mostra o formulário de cadastro e esconde o de login
+        signupForm.classList.remove('hidden');
+        loginForm.classList.add('hidden');
+      });
+
+      // Link inside forms
+      switchToSignup.addEventListener('click', () => signupTab.click());
+      switchToLogin.addEventListener('click', () => loginTab.click());
+    </script>
 
 </body>
+
 </html>

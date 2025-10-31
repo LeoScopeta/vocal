@@ -1,53 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - Singing Coach</title>
+  <title>Sobre - Treinador Vocal</title>
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 text-gray-800">
+<link rel="stylesheet" href="style.css"></head>
+<body class="bg-[var(--background-secondary)] ">
 
   <!-- Navbar -->
-  <nav class="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
+  <nav class="bg-[var(--background)] border-b border-gray-200 shadow-sm sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
 
       <!-- Left Section: Logo -->
       <a href=".." class="flex items-center space-x-2">
-        <span class="text-2xl font-bold text-yellow-600">🎤 Vocal Academy</span>
+        <span class="text-2xl font-bold text-yellow-600">🎤 Academia Vocal</span>
       </a>
 
       <!-- Center Section: Menu Links -->
       <div class="hidden md:flex space-x-6">
-        <a href="courses.html" class="text-gray-700 hover:text-yellow-600 transition">Courses</a>
-        <a href=".." class="text-gray-700 hover:text-yellow-600">Home</a>
-        <a href="dashboard.html" class="text-gray-700 hover:text-yellow-600">My Courses</a>
-        <a href="about.html" class="text-gray-700 hover:text-yellow-600 transition">About</a>
+        <a href="courses.html" class=" hover:text-yellow-600 transition">Cursos</a>
+        <a href=".." class=" hover:text-yellow-600">Início</a>
+        <a href="dashboard.html" class=" hover:text-yellow-600">Meus Cursos</a>
+        <a href="about.html" class=" hover:text-yellow-600 transition">Sobre</a>
       </div>
 
       <!-- Right Section: User / Login -->
       <div class="hidden md:flex items-center space-x-4">
         <!-- When user is logged out -->
         <div id="guest-nav" class="flex items-center space-x-4">
-          <a href="login.html" class="text-gray-700 hover:text-yellow-600">Login</a>
+          <a href="login.html" class=" hover:text-yellow-600">Entrar</a>
           <a href="signin.html"
              class="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition">
-            Sign Up
+            Cadastrar-se
           </a>
         </div>
 
         <!-- When user is logged in -->
         <div id="user-nav" class="hidden items-center space-x-3">
-          <a href="dashboard.html" class="text-gray-700 hover:text-yellow-600 transition">Dashboard</a>
-          <img src="https://i.pravatar.cc/40" alt="Profile"
+          <a href="dashboard.html" class=" hover:text-yellow-600 transition">Painel</a>
+          <img src="https://i.pravatar.cc/40" alt="Perfil"
                class="w-10 h-10 rounded-full border cursor-pointer">
         </div>
       </div>
 
       <!-- Mobile Menu Button -->
       <button id="menu-toggle"
-              class="md:hidden text-gray-600 hover:text-yellow-600 focus:outline-none">
+              class="md:hidden  hover:text-yellow-600 focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M4 6h16M4 12h16M4 18h16" />
@@ -58,25 +58,25 @@
   </div>
 
   <!-- Mobile Dropdown -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-[var(--background)]">
     <div class="flex flex-col p-4 space-y-3">
-      <a href="courses.html" class="text-gray-700 hover:text-yellow-600">Courses</a>
-      <a href=".." class="text-gray-700 hover:text-yellow-600">Home</a>
-      <a href="dashboard.html" class="text-gray-700 hover:text-yellow-600">My Courses</a>
-      <a href="about.html" class="text-gray-700 hover:text-yellow-600">About</a>
+      <a href="courses.html" class=" hover:text-yellow-600">Cursos</a>
+      <a href=".." class=" hover:text-yellow-600">Início</a>
+      <a href="dashboard.html" class=" hover:text-yellow-600">Meus Cursos</a>
+      <a href="about.html" class=" hover:text-yellow-600">Sobre</a>
 
       <hr>
 
       <!-- Mobile auth links -->
       <div id="mobile-guest" class="flex flex-col space-y-2">
-        <a href="login.html" class="text-gray-700 hover:text-yellow-600">Login</a>
+        <a href="login.html" class=" hover:text-yellow-600">Entrar</a>
         <a href="login.html" class="bg-yellow-600 text-white text-center py-2 rounded-lg hover:bg-yellow-700 transition">
-          Sign Up
+          Cadastrar-se
         </a>
       </div>
       <div id="mobile-user" class="hidden flex flex-col space-y-2">
-        <a href="dashboard.html" class="text-gray-700 hover:text-yellow-600">Dashboard</a>
-        <a href="logout" class="text-gray-700 hover:text-red-600">Logout</a>
+        <a href="dashboard.html" class=" hover:text-yellow-600">Painel</a>
+        <a href="logout" class=" hover:text-red-600">Sair</a>
       </div>
     </div>
   </div>
@@ -101,25 +101,25 @@
 </script>
 
   <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-yellow-600 to-amber-700 text-white py-16 px-6 text-center">
-    <h1 class="text-3xl md:text-5xl font-bold mb-4">About Your Coach</h1>
-    <p class="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">Learn from a professional vocal coach with over 10 years of experience helping singers find their true voice and confidence.</p>
+  <section class="bg-gradient-to-r from-[var(--background)] to-[var(--background-secondary)] text-white py-16 px-6 text-center">
+    <h1 class="text-3xl md:text-5xl font-bold mb-4">Sobre o Seu Treinador</h1>
+    <p class="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">Aprenda com um treinador vocal profissional com mais de 10 anos de experiência ajudando cantores a encontrar sua verdadeira voz e confiança.</p>
   </section>
 
   <!-- Teacher Section -->
   <section class="py-12 px-6 md:px-12 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
-    <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=400&q=80" alt="Coach photo" class="rounded-2xl shadow-md w-full md:w-1/3 object-cover">
+    <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=400&q=80" alt="Foto do treinador" class="rounded-2xl shadow-md w-full md:w-1/3 object-cover">
     <div class="flex-1">
-      <h2 class="text-2xl font-bold mb-3 text-gray-900">Meet <span class="text-yellow-600">Alex Martins</span></h2>
-      <p class="mb-4 text-gray-700 leading-relaxed">Alex is a passionate vocal coach and professional singer who has trained over 500 students across the country. His method combines breathing control, resonance techniques, and emotional expression to help singers unlock their full potential. He has worked with students ranging from beginners to professional performers.</p>
+      <h2 class="text-2xl font-bold mb-3 ">Conheça <span class="text-yellow-600">Alex Martins</span></h2>
+      <p class="mb-4  leading-relaxed">Alex é um treinador vocal apaixonado e cantor profissional que já treinou mais de 500 alunos em todo o país. Seu método combina controle da respiração, técnicas de ressonância e expressão emocional para ajudar os cantores a liberar todo o seu potencial. Ele já trabalhou com alunos desde iniciantes até artistas profissionais.</p>
       <div class="flex space-x-4 mt-6">
-        <a href="#" class="text-gray-600 hover:text-yellow-600" aria-label="Instagram">
+        <a href="#" class=" hover:text-yellow-600" aria-label="Instagram">
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24"><path d="M7.75 2C4.68 2 2 4.68 2 7.75v8.5C2 19.32 4.68 22 7.75 22h8.5c3.07 0 5.75-2.68 5.75-5.75v-8.5C22 4.68 19.32 2 16.25 2h-8.5Zm10 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm-5.75 2.5a5.75 5.75 0 1 1 0 11.5 5.75 5.75 0 0 1 0-11.5Zm0 2A3.75 3.75 0 1 0 12 17a3.75 3.75 0 0 0 0-7.5Z"/></svg>
         </a>
-        <a href="#" class="text-gray-600 hover:text-yellow-600" aria-label="Facebook">
+        <a href="#" class=" hover:text-yellow-600" aria-label="Facebook">
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.87v-6.99H8v-2.88h2.4V9.76c0-2.37 1.42-3.68 3.6-3.68 1.05 0 2.15.19 2.15.19v2.36H15c-1.19 0-1.56.74-1.56 1.5v1.8h2.66l-.43 2.88h-2.23v6.99A10 10 0 0 0 22 12Z"/></svg>
         </a>
-        <a href="#" class="text-gray-600 hover:text-yellow-600" aria-label="YouTube">
+        <a href="#" class=" hover:text-yellow-600" aria-label="YouTube">
           <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24"><path d="M21.8 8s-.2-1.42-.82-2.05c-.79-.82-1.67-.82-2.07-.87C15.76 5 12 5 12 5h-.01s-3.76 0-6.91.08c-.4.05-1.29.05-2.07.87C2.4 6.58 2.2 8 2.2 8S2 9.58 2 11.16v1.67c0 1.58.2 3.17.2 3.17s.2 1.42.82 2.05c.79.82 1.83.79 2.29.87 1.67.16 7.69.2 7.69.2s3.76 0 6.91-.08c.4-.05 1.29-.05 2.07-.87.63-.63.82-2.05.82-2.05s.2-1.58.2-3.17v-1.67C22 9.58 21.8 8 21.8 8ZM10 14.73V9.27L15.5 12l-5.5 2.73Z"/></svg>
         </a>
       </div>
@@ -127,29 +127,29 @@
   </section>
 
   <!-- Clients / Testimonials -->
-  <section class="bg-white py-12 px-6 md:px-12">
-    <h3 class="text-center text-2xl font-bold text-gray-800 mb-10">Trusted by Students and Artists</h3>
+  <section class="bg-[var(--background)] py-12 px-6 md:px-12">
+    <h3 class="text-center text-2xl font-bold  mb-10">Confiado por Alunos e Artistas</h3>
     <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
       <div class="p-6 border rounded-xl shadow-sm hover:shadow-md transition">
-        <p class="text-gray-700 italic mb-4">"Alex helped me gain the confidence to perform live. My vocal control improved dramatically after just a few months!"</p>
-        <p class="font-semibold text-gray-900">– Maria Lopes</p>
+        <p class=" italic mb-4">"Alex me ajudou a ganhar confiança para me apresentar ao vivo. Meu controle vocal melhorou drasticamente em apenas alguns meses!"</p>
+        <p class="font-semibold ">– Maria Lopes</p>
       </div>
       <div class="p-6 border rounded-xl shadow-sm hover:shadow-md transition">
-        <p class="text-gray-700 italic mb-4">"His breathing techniques completely changed how I sing. I recommend his lessons to everyone!"</p>
-        <p class="font-semibold text-gray-900">– Daniel Souza</p>
+        <p class=" italic mb-4">"As técnicas de respiração dele mudaram completamente a forma como eu canto. Recomendo suas aulas a todos!"</p>
+        <p class="font-semibold ">– Daniel Souza</p>
       </div>
       <div class="p-6 border rounded-xl shadow-sm hover:shadow-md transition">
-        <p class="text-gray-700 italic mb-4">"Alex’s personalized feedback helped me prepare for my audition and I got accepted!"</p>
-        <p class="font-semibold text-gray-900">– Julia Mendes</p>
+        <p class=" italic mb-4">"O feedback personalizado de Alex me ajudou a me preparar para a audição — e eu fui aprovado!"</p>
+        <p class="font-semibold ">– Julia Mendes</p>
       </div>
     </div>
   </section>
 
   <!-- Contact CTA -->
   <section class="bg-yellow-600 text-white py-16 text-center">
-    <h2 class="text-2xl font-bold mb-4">Want to Train with Alex?</h2>
-    <p class="mb-6">Join the next batch of students and start improving your voice today.</p>
-    <a href="contact" class="bg-white text-yellow-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Get in Touch</a>
+    <h2 class="text-2xl font-bold mb-4">Quer Treinar com Alex?</h2>
+    <p class="mb-6">Junte-se à próxima turma de alunos e comece a aprimorar sua voz hoje mesmo.</p>
+    <a href="contact" class="bg-[var(--background)] text-yellow-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Entre em Contato</a>
   </section>
 
 </body>

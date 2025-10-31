@@ -1,0 +1,9 @@
+:root {
+  --background: hsl(0, 0%, 15%);
+  --foreground: hsl(211, 37%, 84%);
+  --accent: #d08700; 
+  --accent-dark:hsl(39, 100%, 31%);
+  --background-secondary:hsl(55, 32%, 12%);
+  --contrast:var(--background);
+  color: var(--foreground);
+}

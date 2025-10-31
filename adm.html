@@ -1,179 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Dashboard - Responsive</title>
+  <title>Painel Administrativo - Responsivo</title>
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
+<link rel="stylesheet" href="style.css"></head>
 <body class="bg-gray-50 min-h-screen">
 
   <!-- Mobile Top Bar -->
-  <header class="md:hidden flex items-center justify-between bg-white shadow px-4 py-3 fixed top-0 left-0 w-full z-40">
-    <h1 class="text-xl font-bold text-yellow-600">Admin Panel</h1>
+  <header class="md:hidden flex items-center justify-between bg-[var(--background)] shadow px-4 py-3 fixed top-0 left-0 w-full z-40">
+    <h1 class="text-xl font-bold text-yellow-600">Painel Admin</h1>
     <button id="menuBtn" class="text-2xl text-yellow-600 focus:outline-none">☰</button>
   </header>
 
   <div class="flex">
     <!-- Sidebar -->
-    <aside id="sidebar" class="w-64 bg-white shadow-md h-screen fixed left-0 top-0 flex flex-col transform transition-transform duration-300 md:translate-x-0 -translate-x-full z-50">
+    <aside id="sidebar" class="w-64 bg-[var(--background)] shadow-md h-screen fixed left-0 top-0 flex flex-col transform transition-transform duration-300 md:translate-x-0 -translate-x-full z-50">
       <div class="p-6 border-b hidden md:block">
-        <h1 class="text-2xl font-bold text-yellow-600">Admin Panel</h1>
+        <h1 class="text-2xl font-bold text-yellow-600">Painel Admin</h1>
       </div>
       <nav class="flex-1 p-4 space-y-2 mt-16 md:mt-0">
-        <button onclick="showSection('courses')" class="nav-btn w-full text-left p-2 rounded hover:bg-yellow-100">🎓 Courses</button>
-        <button onclick="showSection('testimonials')" class="nav-btn w-full text-left p-2 rounded hover:bg-yellow-100">💬 Testimonials</button>
-        <button onclick="showSection('platform-payment')" class="nav-btn w-full text-left p-2 rounded hover:bg-yellow-100">🧾 App Maintenance</button>
-        <button onclick="showSection('settings')" class="nav-btn w-full text-left p-2 rounded hover:bg-yellow-100">⚙️ Settings</button>
+        <button onclick="showSection('courses')" class="nav-btn w-full text-left p-2 rounded hover:bg-yellow-100">🎓 Cursos</button>
+        <button onclick="showSection('testimonials')" class="nav-btn w-full text-left p-2 rounded hover:bg-yellow-100">💬 Depoimentos</button>
+        <button onclick="showSection('platform-payment')" class="nav-btn w-full text-left p-2 rounded hover:bg-yellow-100">🧾 Manutenção do App</button>
+        <button onclick="showSection('settings')" class="nav-btn w-full text-left p-2 rounded hover:bg-yellow-100">⚙️ Configurações</button>
       </nav>
       <div class="p-4 border-t">
-        <button class="w-full py-2 bg-red-500 text-white rounded hover:bg-red-600">Logout</button>
+        <button class="w-full py-2 bg-red-500 text-white rounded hover:bg-red-600">Sair</button>
       </div>
     </aside>
 
     <!-- Main Content -->
     <main class="flex-1 md:ml-64 p-6 md:p-8 mt-14 md:mt-0 w-full space-y-8">
-      <!-- Dashboard -->
 
       <!-- Courses -->
       <section id="courses" class="section hidden">
         <div class="flex justify-between items-center mb-4">
-          <h2 class="text-3xl font-bold">🎓 Manage Courses</h2>
-          <button class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700">+ Add Course</button>
+          <h2 class="text-3xl font-bold">🎓 Gerenciar Cursos</h2>
+          <button class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-[var(--accent-dark)]">+ Adicionar Curso</button>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="bg-white shadow rounded-lg p-4 space-y-2">
-            <h3 class="text-xl font-bold">Beginner Singing</h3>
-            <p class="text-gray-600">Learn the fundamentals of vocal control and breathing.</p>
+          <div class="bg-[var(--background)] shadow rounded-lg p-4 space-y-2">
+            <h3 class="text-xl font-bold">Canto para Iniciantes</h3>
+            <p class="">Aprenda os fundamentos do controle vocal e da respiração.</p>
             <p class="font-semibold">R$ 129</p>
             <div class="flex justify-between text-sm mt-2">
-              <button onclick="showSection('edit-course')" class="text-yellow-600 hover:underline">Edit</button>
-              <button class="text-red-500 hover:underline">Delete</button>
+              <button onclick="showSection('edit-course')" class="text-yellow-600 hover:underline">Editar</button>
+              <button class="text-red-500 hover:underline">Excluir</button>
             </div>
           </div>
         </div>
       </section>
 
-    <section id="edit-course" class="section hidden">
-  <div class="flex justify-between items-center mb-4">
-    <h2 class="text-3xl font-bold">✏️ Edit Course</h2>
-    <button onclick="showSection(event, 'courses')" class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300">
-      ← Back
-    </button>
-  </div>
+      <!-- Edit Course -->
+      <section id="edit-course" class="section hidden">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-3xl font-bold">✏️ Editar Curso</h2>
+          <button onclick="showSection(event, 'courses')" class="bg-gray-200  px-4 py-2 rounded hover:bg-gray-300">
+            ← Voltar
+          </button>
+        </div>
 
-  <div class="bg-white shadow rounded-lg p-6 space-y-6">
-    <!-- Price -->
-    <div>
-      <label class="block text-sm font-medium text-gray-700">Price (R$)</label>
-      <input type="number" class="w-full p-2 border rounded" value="129" />
-    </div>
+        <div class="bg-[var(--background)] shadow rounded-lg p-6 space-y-6">
+          <!-- Price -->
+          <div>
+            <label class="block text-sm font-medium ">Preço (R$)</label>
+            <input type="number" class="w-full p-2 border rounded" value="129" />
+          </div>
 
-    <!-- Video Manager -->
-    <div class="border-t pt-4">
-      <h3 class="text-xl font-bold mb-3">🎥 Course Videos</h3>
+          <!-- Video Manager -->
+          <div class="border-t pt-4">
+            <h3 class="text-xl font-bold mb-3">🎥 Vídeos do Curso</h3>
 
-      <!-- Add / Edit Video Form -->
-      <div class="flex flex-col md:flex-row md:space-x-2 space-y-2 md:space-y-0">
-        <input id="videoTitle" placeholder="Video Title" class="flex-1 p-2 border rounded" />
-        <input id="videoUrl" placeholder="YouTube URL" class="flex-1 p-2 border rounded" />
-        <button id="addVideoBtn" onclick="addVideo()"
-          class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700">
-          + Add
-        </button>
-        <button id="updateVideoBtn" onclick="updateVideo()" 
-          class="hidden bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
-          💾 Update
-        </button>
-      </div>
-      <p class="text-xs text-gray-500 mt-1">Paste a full YouTube link (e.g. https://www.youtube.com/watch?v=abcd1234)</p>
-    </div>
+            <!-- Add / Edit Video Form -->
+            <div class="flex flex-col md:flex-row md:space-x-2 space-y-2 md:space-y-0">
+              <input id="videoTitle" placeholder="Título do Vídeo" class="flex-1 p-2 border rounded" />
+              <input id="videoUrl" placeholder="URL do YouTube" class="flex-1 p-2 border rounded" />
+              <button id="addVideoBtn" onclick="addVideo()"
+                class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-[var(--accent-dark)]">
+                + Adicionar
+              </button>
+              <button id="updateVideoBtn" onclick="updateVideo()" 
+                class="hidden bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+                💾 Atualizar
+              </button>
+            </div>
+            <p class="text-xs  mt-1">Cole um link completo do YouTube (ex: https://www.youtube.com/watch?v=abcd1234)</p>
+          </div>
 
-    <!-- Video List -->
-    <div id="videoList" class="space-y-2 mt-4"></div>
+          <!-- Video List -->
+          <div id="videoList" class="space-y-2 mt-4"></div>
 
-    <div class="flex justify-end">
-      <button class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700">Save Changes</button>
-    </div>
-  </div>
-</section>
-
-
+          <div class="flex justify-end">
+            <button class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-[var(--accent-dark)]">Salvar Alterações</button>
+          </div>
+        </div>
+      </section>
 
       <!-- Testimonials -->
       <section id="testimonials" class="section hidden">
         <div class="flex justify-between items-center mb-4">
-          <h2 class="text-3xl font-bold">💬 Testimonials</h2>
-          <button onclick="openModal()" class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700">+ Add Testimonial</button>
+          <h2 class="text-3xl font-bold">💬 Depoimentos</h2>
+          <button onclick="openModal()" class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-[var(--accent-dark)]">+ Adicionar Depoimento</button>
         </div>
         <div class="space-y-4">
-          <div class="bg-white shadow p-4 rounded-lg flex justify-between items-center">
+          <div class="bg-[var(--background)] shadow p-4 rounded-lg flex justify-between items-center">
             <div>
               <p class="font-semibold">Maria Silva</p>
-              <p class="text-gray-600">“Amazing teacher! My voice improved so much.”</p>
+              <p class="">“Professor incrível! Minha voz melhorou muito.”</p>
             </div>
-            <button class="text-red-500 hover:underline">Remove</button>
+            <button class="text-red-500 hover:underline">Remover</button>
           </div>
         </div>
       </section>
 
       <!-- Add Testimonial Modal -->
       <div id="testimonial-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div class="bg-white p-6 rounded-lg w-96 shadow-xl">
-          <h3 class="text-xl font-bold mb-4">Add Testimonial</h3>
-          <label class="block text-sm text-gray-700">Name</label>
+        <div class="bg-[var(--background)] p-6 rounded-lg w-96 shadow-xl">
+          <h3 class="text-xl font-bold mb-4">Adicionar Depoimento</h3>
+          <label class="block text-sm ">Nome</label>
           <input type="text" class="w-full p-2 border rounded mb-2" />
-          <label class="block text-sm text-gray-700">Message</label>
+          <label class="block text-sm ">Mensagem</label>
           <textarea class="w-full p-2 border rounded mb-4" rows="3"></textarea>
           <div class="flex justify-end space-x-2">
-            <button onclick="closeModal()" class="px-4 py-2 border rounded">Cancel</button>
-            <button class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700">Add</button>
+            <button onclick="closeModal()" class="px-4 py-2 border rounded">Cancelar</button>
+            <button class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-[var(--accent-dark)]">Adicionar</button>
           </div>
         </div>
       </div>
 
       <!-- Payments -->
       <section id="payments" class="section hidden">
-        <h2 class="text-3xl font-bold mb-4">💳 Stripe Configuration</h2>
-        <div class="bg-white shadow p-4 rounded-lg space-y-4">
-          <label class="block text-sm text-gray-700">API Key</label>
+        <h2 class="text-3xl font-bold mb-4">💳 Configuração do Stripe</h2>
+        <div class="bg-[var(--background)] shadow p-4 rounded-lg space-y-4">
+          <label class="block text-sm ">Chave da API</label>
           <input type="text" class="w-full p-2 border rounded" placeholder="sk_live_..." />
-          <label class="block text-sm text-gray-700">Receiving Account</label>
-          <input type="text" class="w-full p-2 border rounded" placeholder="your@email.com" />
-          <button class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700">Save</button>
+          <label class="block text-sm ">Conta de Recebimento</label>
+          <input type="text" class="w-full p-2 border rounded" placeholder="seu@email.com" />
+          <button class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-[var(--accent-dark)]">Salvar</button>
         </div>
       </section>
 
       <!-- Platform Payment -->
       <section id="platform-payment" class="section hidden">
-        <h2 class="text-3xl font-bold mb-4">🧾 Platform Maintenance Payment</h2>
-        <div class="bg-white shadow p-6 rounded-lg">
-          <p class="text-gray-700 mb-4">Keep your app running smoothly by paying for hosting and updates.</p>
+        <h2 class="text-3xl font-bold mb-4">🧾 Pagamento de Manutenção da Plataforma</h2>
+        <div class="bg-[var(--background)] shadow p-6 rounded-lg">
+          <p class=" mb-4">Mantenha seu aplicativo funcionando corretamente pagando hospedagem e atualizações.</p>
           <div class="space-y-2 mb-4">
-            <p><strong>Current Plan:</strong> Pro (R$ 59/month)</p>
-            <p><strong>Status:</strong> Active until 20/11/2025</p>
+            <p><strong>Plano Atual:</strong> Pro (R$ 59/mês)</p>
+            <p><strong>Status:</strong> Ativo até 20/11/2025</p>
           </div>
-          <button class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Pay Next Month</button>
+          <button class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Pagar Próximo Mês</button>
         </div>
       </section>
 
       <!-- Settings -->
       <section id="settings" class="section hidden">
-        <h2 class="text-3xl font-bold mb-4">⚙️ Settings</h2>
-        <div class="bg-white shadow p-4 rounded-lg space-y-4">
+        <h2 class="text-3xl font-bold mb-4">⚙️ Configurações</h2>
+        <div class="bg-[var(--background)] shadow p-4 rounded-lg space-y-4">
           <div>
-            <label class="block text-sm text-gray-700">Teacher Name</label>
-            <input type="text" class="w-full p-2 border rounded" placeholder="John Vocal" />
+            <label class="block text-sm ">Nome do Professor</label>
+            <input type="text" class="w-full p-2 border rounded" placeholder="João Vocal" />
           </div>
           <div>
-            <label class="block text-sm text-gray-700">Profile Photo</label>
+            <label class="block text-sm ">Foto de Perfil</label>
             <input type="file" class="w-full border rounded p-2" />
           </div>
           <div>
-            <label class="block text-sm text-gray-700">About Description</label>
-            <textarea class="w-full p-2 border rounded" rows="4">Professional singer and vocal coach with 10+ years of experience.</textarea>
+            <label class="block text-sm ">Descrição</label>
+            <textarea class="w-full p-2 border rounded" rows="4">Cantor profissional e coach vocal com mais de 10 anos de experiência.</textarea>
           </div>
-          <button class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700">Save Changes</button>
+          <button class="bg-yellow-600 text-white px-4 py-2 rounded hover:bg-[var(--accent-dark)]">Salvar Alterações</button>
         </div>
       </section>
     </main>
@@ -203,6 +201,7 @@
       document.getElementById('testimonial-modal').classList.add('hidden');
     }
   </script>
+
   <script>
   let courseVideos = [];
   let editVideoId = null;
@@ -211,9 +210,9 @@
     const title = document.getElementById('videoTitle').value.trim();
     const url = document.getElementById('videoUrl').value.trim();
 
-    if (!title || !url) return alert('Please fill in both fields.');
+    if (!title || !url) return alert('Por favor, preencha ambos os campos.');
     const yt = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\//;
-    if (!yt.test(url)) return alert('Please enter a valid YouTube link.');
+    if (!yt.test(url)) return alert('Insira um link válido do YouTube.');
 
     courseVideos.push({ id: Date.now(), title, url });
     clearForm();
@@ -225,7 +224,7 @@
     list.innerHTML = '';
 
     if (!courseVideos.length) {
-      list.innerHTML = '<p class="text-gray-500">No videos added yet.</p>';
+      list.innerHTML = '<p class="">Nenhum vídeo adicionado ainda.</p>';
       return;
     }
 
@@ -234,13 +233,13 @@
         <div class="bg-gray-50 border rounded p-3 flex flex-col md:flex-row md:justify-between md:items-center space-y-2 md:space-y-0">
           <div>
             <p class="font-medium">${i + 1}. ${v.title}</p>
-            <a href="${v.url}" target="_blank" class="text-blue-600 text-sm hover:underline">View on YouTube</a>
+            <a href="${v.url}" target="_blank" class="text-blue-600 text-sm hover:underline">Ver no YouTube</a>
           </div>
           <div class="flex space-x-2">
             <button onclick="moveVideo(${i}, -1)" class="text-blue-600 hover:underline">⬆️</button>
             <button onclick="moveVideo(${i}, 1)" class="text-blue-600 hover:underline">⬇️</button>
-            <button onclick="editVideo(${v.id})" class="text-yellow-600 hover:underline">✏️ Edit</button>
-            <button onclick="deleteVideo(${v.id})" class="text-red-500 hover:underline">🗑️ Delete</button>
+            <button onclick="editVideo(${v.id})" class="text-yellow-600 hover:underline">✏️ Editar</button>
+            <button onclick="deleteVideo(${v.id})" class="text-red-500 hover:underline">🗑️ Excluir</button>
           </div>
         </div>`);
     });
@@ -268,7 +267,7 @@
   function updateVideo() {
     const title = document.getElementById('videoTitle').value.trim();
     const url = document.getElementById('videoUrl').value.trim();
-    if (!title || !url) return alert('Please fill in both fields.');
+    if (!title || !url) return alert('Por favor, preencha ambos os campos.');
 
     const idx = courseVideos.findIndex(v => v.id === editVideoId);
     if (idx > -1) courseVideos[idx] = { id: editVideoId, title, url };
@@ -277,7 +276,7 @@
   }
 
   function deleteVideo(id) {
-    if (confirm('Are you sure you want to delete this video?')) {
+    if (confirm('Tem certeza de que deseja excluir este vídeo?')) {
       courseVideos = courseVideos.filter(v => v.id !== id);
       renderVideoList();
     }
@@ -292,7 +291,7 @@
   }
 
   renderVideoList();
-</script>
+  </script>
 
 </body>
 </html>

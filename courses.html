@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Courses – Vocal Studio</title>
+    <title>Cursos – Estúdio Vocal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@400;500&display=swap"
@@ -28,49 +28,49 @@
         }
       }
     </style>
-  </head>
+  <link rel="stylesheet" href="style.css"></head>
 
-  <body class="bg-white text-gray-800">
+  <body class="bg-[var(--background)] ">
     <!-- Navbar -->
-    <nav class="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
+    <nav class="bg-[var(--background)] border-b border-gray-200 shadow-sm sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
 
       <!-- Left Section: Logo -->
       <a href=".." class="flex items-center space-x-2">
-        <span class="text-2xl font-bold text-yellow-600">🎤 Vocal Academy</span>
+        <span class="text-2xl font-bold text-yellow-600">🎤 Academia Vocal</span>
       </a>
 
       <!-- Center Section: Menu Links -->
       <div class="hidden md:flex space-x-6">
-        <a href="courses.html" class="text-gray-700 hover:text-yellow-600 transition">Courses</a>
-        <a href=".." class="text-gray-700 hover:text-yellow-600">Home</a>
-        <a href="dashboard.html" class="text-gray-700 hover:text-yellow-600">My Courses</a>
-        <a href="about.html" class="text-gray-700 hover:text-yellow-600 transition">About</a>
+        <a href="courses.html" class=" hover:text-yellow-600 transition">Cursos</a>
+        <a href=".." class=" hover:text-yellow-600">Início</a>
+        <a href="dashboard.html" class=" hover:text-yellow-600">Meus Cursos</a>
+        <a href="about.html" class=" hover:text-yellow-600 transition">Sobre</a>
       </div>
 
       <!-- Right Section: User / Login -->
       <div class="hidden md:flex items-center space-x-4">
         <!-- When user is logged out -->
         <div id="guest-nav" class="flex items-center space-x-4">
-          <a href="login.html" class="text-gray-700 hover:text-yellow-600">Login</a>
+          <a href="login.html" class=" hover:text-yellow-600">Entrar</a>
           <a href="signin.html"
              class="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition">
-            Sign Up
+            Cadastrar-se
           </a>
         </div>
 
         <!-- When user is logged in -->
         <div id="user-nav" class="hidden items-center space-x-3">
-          <a href="dashboard.html" class="text-gray-700 hover:text-yellow-600 transition">Dashboard</a>
-          <img src="https://i.pravatar.cc/40" alt="Profile"
+          <a href="dashboard.html" class=" hover:text-yellow-600 transition">Painel</a>
+          <img src="https://i.pravatar.cc/40" alt="Perfil"
                class="w-10 h-10 rounded-full border cursor-pointer">
         </div>
       </div>
 
       <!-- Mobile Menu Button -->
       <button id="menu-toggle"
-              class="md:hidden text-gray-600 hover:text-yellow-600 focus:outline-none">
+              class="md:hidden  hover:text-yellow-600 focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M4 6h16M4 12h16M4 18h16" />
@@ -81,25 +81,25 @@
   </div>
 
   <!-- Mobile Dropdown -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-[var(--background)]">
     <div class="flex flex-col p-4 space-y-3">
-      <a href="courses.html" class="text-gray-700 hover:text-yellow-600">Courses</a>
-      <a href=".." class="text-gray-700 hover:text-yellow-600">Home</a>
-      <a href="dashboard.html" class="text-gray-700 hover:text-yellow-600">My Courses</a>
-      <a href="about.html" class="text-gray-700 hover:text-yellow-600">About</a>
+      <a href="courses.html" class=" hover:text-yellow-600">Cursos</a>
+      <a href=".." class=" hover:text-yellow-600">Início</a>
+      <a href="dashboard.html" class=" hover:text-yellow-600">Meus Cursos</a>
+      <a href="about.html" class=" hover:text-yellow-600">Sobre</a>
 
       <hr>
 
       <!-- Mobile auth links -->
       <div id="mobile-guest" class="flex flex-col space-y-2">
-        <a href="login.html" class="text-gray-700 hover:text-yellow-600">Login</a>
+        <a href="login.html" class=" hover:text-yellow-600">Entrar</a>
         <a href="login.html" class="bg-yellow-600 text-white text-center py-2 rounded-lg hover:bg-yellow-700 transition">
-          Sign Up
+          Cadastrar-se
         </a>
       </div>
       <div id="mobile-user" class="hidden flex flex-col space-y-2">
-        <a href="dashboard.html" class="text-gray-700 hover:text-yellow-600">Dashboard</a>
-        <a href="logout" class="text-gray-700 hover:text-red-600">Logout</a>
+        <a href="dashboard.html" class=" hover:text-yellow-600">Painel</a>
+        <a href="logout" class=" hover:text-red-600">Sair</a>
       </div>
     </div>
   </div>
@@ -124,113 +124,113 @@
 </script>
 
     <!-- Page Header -->
-    <section class="text-center py-16 bg-gray-50 border-b border-gray-100">
-      <h1 class="text-4xl font-bold mb-3">Our Vocal Courses</h1>
-      <p class="text-gray-600 max-w-2xl mx-auto">
-        Master your voice at your own pace. Choose from structured lessons crafted by a professional coach.
+    <section class="text-center py-16 bg-[var(--background-secondary)] border-b border-gray-100">
+      <h1 class="text-4xl font-bold mb-3">Nossos Cursos de Canto</h1>
+      <p class=" max-w-2xl mx-auto">
+        Domine a sua voz no seu próprio ritmo. Escolha entre aulas estruturadas criadas por um coach profissional.
       </p>
     </section>
 
     <!-- Dynamic Grid -->
-    <section class="px-6 md:px-16 py-16 bg-white">
+    <section class="px-6 md:px-16 py-16 bg-[var(--background)]">
       <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
         <!-- Course Card -->
-        <div class="fade-up break-inside-avoid border rounded-2xl shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 bg-gray-50 overflow-hidden">
+        <div class="fade-up break-inside-avoid border rounded-2xl shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 bg-[var(--background-secondary)] overflow-hidden">
           
           <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Beginner’s Voice Training</h3>
-            <p class="text-gray-600 mb-4">
-              Build confidence and learn the fundamentals of proper vocal technique.
+            <h3 class="text-xl font-semibold mb-2">Treinamento Vocal para Iniciantes</h3>
+            <p class=" mb-4">
+              Construa confiança e aprenda os fundamentos da técnica vocal adequada.
             </p>
             <div class="flex justify-between items-center mb-4">
               
-              <span class="font-bold text-gray-800">$49</span>
+              <span class="font-bold ">$49</span>
             </div>
             <a
               href="/course/beginner"
               class="bg-yellow-600 text-white px-4 py-2 rounded-md hover:bg-yellow-700 inline-block"
             >
-              Learn More
+              Saiba Mais
             </a>
           </div>
         </div>
 
-        <div class="fade-up break-inside-avoid border rounded-2xl shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 bg-gray-50 overflow-hidden">
+        <div class="fade-up break-inside-avoid border rounded-2xl shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 bg-[var(--background-secondary)] overflow-hidden">
 
           <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Intermediate Technique</h3>
-            <p class="text-gray-600 mb-4">
-              Strengthen tone, breath control, and articulation with advanced exercises.
+            <h3 class="text-xl font-semibold mb-2">Técnica Intermediária</h3>
+            <p class=" mb-4">
+              Fortaleça o tom, o controle da respiração e a articulação com exercícios avançados.
             </p>
             <div class="flex justify-between items-center mb-4">
               
-              <span class="font-bold text-gray-800">$69</span>
+              <span class="font-bold ">$69</span>
             </div>
             <a
               href="/course/intermediate"
               class="bg-yellow-600 text-white px-4 py-2 rounded-md hover:bg-yellow-700 inline-block"
             >
-              Learn More
+              Saiba Mais
             </a>
           </div>
         </div>
 
-        <div class="fade-up break-inside-avoid border rounded-2xl shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 bg-gray-50 overflow-hidden">
+        <div class="fade-up break-inside-avoid border rounded-2xl shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 bg-[var(--background-secondary)] overflow-hidden">
 
           <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Advanced Performance</h3>
-            <p class="text-gray-600 mb-4">
-              Perfect your stage presence and explore stylistic expression.
+            <h3 class="text-xl font-semibold mb-2">Performance Avançada</h3>
+            <p class=" mb-4">
+              Aperfeiçoe sua presença de palco e explore a expressão estilística.
             </p>
             <div class="flex justify-between items-center mb-4">
               
-              <span class="font-bold text-gray-800">$99</span>
+              <span class="font-bold ">$99</span>
             </div>
             <a
               href="/course/advanced"
               class="bg-yellow-600 text-white px-4 py-2 rounded-md hover:bg-yellow-700 inline-block"
             >
-              Learn More
+              Saiba Mais
             </a>
           </div>
         </div>
 
-        <div class="fade-up break-inside-avoid border rounded-2xl shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 bg-gray-50 overflow-hidden">
+        <div class="fade-up break-inside-avoid border rounded-2xl shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 bg-[var(--background-secondary)] overflow-hidden">
 
           <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Stage Confidence Mastery</h3>
-            <p class="text-gray-600 mb-4">
-              Overcome stage fright and develop charisma through live simulations.
+            <h3 class="text-xl font-semibold mb-2">Domínio da Confiança no Palco</h3>
+            <p class=" mb-4">
+              Supere o medo de palco e desenvolva carisma através de simulações ao vivo.
             </p>
             <div class="flex justify-between items-center mb-4">
               
-              <span class="font-bold text-gray-800">$59</span>
+              <span class="font-bold ">$59</span>
             </div>
             <a
               href="/course/stage"
               class="bg-yellow-600 text-white px-4 py-2 rounded-md hover:bg-yellow-700 inline-block"
             >
-              Learn More
+              Saiba Mais
             </a>
           </div>
         </div>
 
-        <div class="fade-up break-inside-avoid border rounded-2xl shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 bg-gray-50 overflow-hidden">
+        <div class="fade-up break-inside-avoid border rounded-2xl shadow-sm hover:shadow-xl transition transform hover:-translate-y-1 bg-[var(--background-secondary)] overflow-hidden">
 
           <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Breath Control & Projection</h3>
-            <p class="text-gray-600 mb-4">
-              Focused training to increase lung capacity and projection power.
+            <h3 class="text-xl font-semibold mb-2">Controle de Respiração e Projeção</h3>
+            <p class=" mb-4">
+              Treinamento focado para aumentar a capacidade pulmonar e o poder de projeção.
             </p>
             <div class="flex justify-between items-center mb-4">
               
-              <span class="font-bold text-gray-800">$65</span>
+              <span class="font-bold ">$65</span>
             </div>
             <a
               href="/course/breath"
               class="bg-yellow-600 text-white px-4 py-2 rounded-md hover:bg-yellow-700 inline-block"
             >
-              Learn More
+              Saiba Mais
             </a>
           </div>
         </div>
@@ -238,8 +238,8 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-10 text-center">
-      <p>&copy; 2025 Vocal Studio. All rights reserved.</p>
+    <footer class="bg-[var(--background)]  py-10 text-center">
+      <p>&copy; 2025 Estúdio Vocal. Todos os direitos reservados.</p>
     </footer>
   </body>
 </html>

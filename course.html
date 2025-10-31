@@ -1,52 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Course - Master Your Voice</title>
+  <title>Curso - Domine Sua Voz</title>
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 min-h-screen flex flex-col">
+<link rel="stylesheet" href="style.css"></head>
+<body class="bg-[var(--background-secondary)] min-h-screen flex flex-col">
   <!-- Navbar -->
-  <nav class="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
+  <nav class="bg-[var(--background)] border-b border-gray-200 shadow-sm sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
 
       <!-- Left Section: Logo -->
       <a href=".." class="flex items-center space-x-2">
-        <span class="text-2xl font-bold text-yellow-600">🎤 Vocal Academy</span>
+        <span class="text-2xl font-bold text-yellow-600">🎤 Academia Vocal</span>
       </a>
 
       <!-- Center Section: Menu Links -->
       <div class="hidden md:flex space-x-6">
-        <a href="courses.html" class="text-gray-700 hover:text-yellow-600 transition">Courses</a>
-        <a href=".." class="text-gray-700 hover:text-yellow-600">Home</a>
-        <a href="dashboard.html" class="text-gray-700 hover:text-yellow-600">My Courses</a>
-        <a href="about.html" class="text-gray-700 hover:text-yellow-600 transition">About</a>
+        <a href="courses.html" class=" hover:text-yellow-600 transition">Cursos</a>
+        <a href=".." class=" hover:text-yellow-600">Início</a>
+        <a href="dashboard.html" class=" hover:text-yellow-600">Meus Cursos</a>
+        <a href="about.html" class=" hover:text-yellow-600 transition">Sobre</a>
       </div>
 
       <!-- Right Section: User / Login -->
       <div class="hidden md:flex items-center space-x-4">
         <!-- When user is logged out -->
         <div id="guest-nav" class="flex items-center space-x-4">
-          <a href="login.html" class="text-gray-700 hover:text-yellow-600">Login</a>
+          <a href="login.html" class=" hover:text-yellow-600">Entrar</a>
           <a href="signin.html"
              class="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition">
-            Sign Up
+            Cadastrar-se
           </a>
         </div>
 
         <!-- When user is logged in -->
         <div id="user-nav" class="hidden items-center space-x-3">
-          <a href="dashboard.html" class="text-gray-700 hover:text-yellow-600 transition">Dashboard</a>
-          <img src="https://i.pravatar.cc/40" alt="Profile"
+          <a href="dashboard.html" class=" hover:text-yellow-600 transition">Painel</a>
+          <img src="https://i.pravatar.cc/40" alt="Perfil"
                class="w-10 h-10 rounded-full border cursor-pointer">
         </div>
       </div>
 
       <!-- Mobile Menu Button -->
       <button id="menu-toggle"
-              class="md:hidden text-gray-600 hover:text-yellow-600 focus:outline-none">
+              class="md:hidden  hover:text-yellow-600 focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M4 6h16M4 12h16M4 18h16" />
@@ -57,25 +57,25 @@
   </div>
 
   <!-- Mobile Dropdown -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-[var(--background)]">
     <div class="flex flex-col p-4 space-y-3">
-      <a href="courses.html" class="text-gray-700 hover:text-yellow-600">Courses</a>
-      <a href=".." class="text-gray-700 hover:text-yellow-600">Home</a>
-      <a href="dashboard.html" class="text-gray-700 hover:text-yellow-600">My Courses</a>
-      <a href="about.html" class="text-gray-700 hover:text-yellow-600">About</a>
+      <a href="courses.html" class=" hover:text-yellow-600">Cursos</a>
+      <a href=".." class=" hover:text-yellow-600">Início</a>
+      <a href="dashboard.html" class=" hover:text-yellow-600">Meus Cursos</a>
+      <a href="about.html" class=" hover:text-yellow-600">Sobre</a>
 
       <hr>
 
       <!-- Mobile auth links -->
       <div id="mobile-guest" class="flex flex-col space-y-2">
-        <a href="login.html" class="text-gray-700 hover:text-yellow-600">Login</a>
+        <a href="login.html" class=" hover:text-yellow-600">Entrar</a>
         <a href="login.html" class="bg-yellow-600 text-white text-center py-2 rounded-lg hover:bg-yellow-700 transition">
-          Sign Up
+          Cadastrar-se
         </a>
       </div>
       <div id="mobile-user" class="hidden flex flex-col space-y-2">
-        <a href="dashboard.html" class="text-gray-700 hover:text-yellow-600">Dashboard</a>
-        <a href="logout" class="text-gray-700 hover:text-red-600">Logout</a>
+        <a href="dashboard.html" class=" hover:text-yellow-600">Painel</a>
+        <a href="logout" class=" hover:text-red-600">Sair</a>
       </div>
     </div>
   </div>
@@ -102,76 +102,76 @@
   <!-- Course Section -->
   <main class="flex-1 p-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-6 mt-4">
     <!-- Main Video Section -->
-    <section class="lg:col-span-3 bg-white rounded-xl shadow p-4 flex flex-col">
+    <section class="lg:col-span-3 bg-[var(--background)] rounded-xl shadow p-4 flex flex-col">
       <div class="aspect-video w-full mb-4 rounded-lg overflow-hidden">
         <iframe id="course-video"
           src="https://www.youtube.com/embed/7aQv8eKxVZs"
-          title="YouTube video player"
+          title="Reprodutor de vídeo do YouTube"
           frameborder="0"
           allowfullscreen
           class="w-full h-full">
         </iframe>
       </div>
 
-      <h1 id="lesson-title" class="text-2xl font-bold text-gray-800 mb-2">Lesson 1: Breathing & Posture</h1>
-      <p id="lesson-description" class="text-gray-600 mb-4">
-        Learn fundamental breathing and posture techniques to improve your vocal tone and sustain.
+      <h1 id="lesson-title" class="text-2xl font-bold  mb-2">Aula 1: Respiração e Postura</h1>
+      <p id="lesson-description" class=" mb-4">
+        Aprenda técnicas fundamentais de respiração e postura para melhorar o tom e a sustentação da sua voz.
       </p>
 
-      <div class="mt-auto flex justify-between items-center border-t pt-3 text-sm text-gray-500">
-        <span id="lesson-duration">Duration: 12:34</span>
+      <div class="mt-auto flex justify-between items-center border-t pt-3 text-sm ">
+        <span id="lesson-duration">Duração: 12:34</span>
       </div>
     </section>
 
     <!-- Sidebar - Playlist -->
-    <aside class="bg-white rounded-xl shadow p-4">
-      <h2 class="text-lg font-semibold text-gray-800 mb-3">Course Lessons</h2>
+    <aside class="bg-[var(--background)] rounded-xl shadow p-4">
+      <h2 class="text-lg font-semibold  mb-3">Aulas do Curso</h2>
       <ul id="lesson-list" class="space-y-3">
-        <li class="lesson-item flex items-center gap-3 p-2 rounded-lg cursor-pointer bg-yellow-50"
+        <li class="lesson-item flex items-center gap-3 p-2 rounded-lg cursor-pointer bg-[--var(background-secondary)]"
             data-url="https://www.youtube.com/embed/7aQv8eKxVZs"
-            data-title="Lesson 1: Breathing & Posture"
-            data-desc="Learn fundamental breathing and posture techniques to improve your vocal tone and sustain."
+            data-title="Aula 1: Respiração e Postura"
+            data-desc="Aprenda técnicas fundamentais de respiração e postura para melhorar o tom e a sustentação da sua voz."
             data-duration="12:34">
-          <div class="w-10 h-10 bg-yellow-200 rounded-lg flex items-center justify-center text-yellow-700 font-bold">1</div>
+          <div class="w-10 h-10 bg-yellow-200 rounded-lg text-black flex items-center justify-center text-yellow-700 font-bold">1</div>
           <div>
-            <p class="text-sm font-semibold text-yellow-700">Breathing & Posture</p>
-            <p class="text-xs text-gray-500">12:34 min</p>
+            <p class="text-sm font-semibold text-yellow-700">Respiração e Postura</p>
+            <p class="text-xs ">12:34 min</p>
           </div>
         </li>
 
-        <li class="lesson-item flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 cursor-pointer"
+        <li class="lesson-item flex items-center gap-3 p-2 rounded-lg hover:bg-[var(--background-secondary)] cursor-pointer"
             data-url="https://www.youtube.com/embed/YQHsXMglC9A"
-            data-title="Lesson 2: Vocal Warm-ups"
-            data-desc="Daily routines to warm up your vocal cords and improve tone consistency."
+            data-title="Aula 2: Aquecimento Vocal"
+            data-desc="Rotinas diárias para aquecer as cordas vocais e melhorar a consistência do tom."
             data-duration="09:48">
-          <div class="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-gray-700 font-bold">2</div>
+          <div class="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-black font-bold">2</div>
           <div>
-            <p class="text-sm font-semibold text-gray-700">Vocal Warm-ups</p>
-            <p class="text-xs text-gray-500">09:48 min</p>
+            <p class="text-sm font-semibold ">Aquecimento Vocal</p>
+            <p class="text-xs ">09:48 min</p>
           </div>
         </li>
 
-        <li class="lesson-item flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 cursor-pointer"
+        <li class="lesson-item flex items-center gap-3 p-2 rounded-lg hover:bg-[var(--background-secondary)] cursor-pointer"
             data-url="https://www.youtube.com/embed/jfKfPfyJRdk"
-            data-title="Lesson 3: Pitch Control"
-            data-desc="Develop precision and confidence in your vocal pitch through targeted exercises."
+            data-title="Aula 3: Controle de Tom"
+            data-desc="Desenvolva precisão e confiança no seu tom vocal através de exercícios direcionados."
             data-duration="10:22">
-          <div class="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-gray-700 font-bold">3</div>
+          <div class="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-black font-bold">3</div>
           <div>
-            <p class="text-sm font-semibold text-gray-700">Pitch Control</p>
-            <p class="text-xs text-gray-500">10:22 min</p>
+            <p class="text-sm font-semibold ">Controle de Tom</p>
+            <p class="text-xs ">10:22 min</p>
           </div>
         </li>
 
-        <li class="lesson-item flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 cursor-pointer"
+        <li class="lesson-item flex items-center gap-3 p-2 rounded-lg hover:bg-[var(--background-secondary)] cursor-pointer"
             data-url="https://www.youtube.com/embed/aqz-KE-bpKQ"
-            data-title="Lesson 4: Expressive Singing"
-            data-desc="Learn how to express emotion and dynamics to captivate your audience."
+            data-title="Aula 4: Canto Expressivo"
+            data-desc="Aprenda a expressar emoção e dinâmica para cativar seu público."
             data-duration="11:05">
-          <div class="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-gray-700 font-bold">4</div>
+          <div class="w-10 h-10 bg-gray-200 rounded-lg flex items-center justify-center text-black font-bold">4</div>
           <div>
-            <p class="text-sm font-semibold text-gray-700">Expressive Singing</p>
-            <p class="text-xs text-gray-500">11:05 min</p>
+            <p class="text-sm font-semibold ">Canto Expressivo</p>
+            <p class="text-xs ">11:05 min</p>
           </div>
         </li>
       </ul>
@@ -179,42 +179,46 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-white py-4 text-center text-gray-500 text-sm border-t mt-8">
-    © 2025 Vocal Academy. All rights reserved.
+  <footer class="bg-[var(--background)] py-4 text-center  text-sm border-t mt-8">
+    © 2025 Academia Vocal. Todos os direitos reservados.
   </footer>
 
   <script>
-    const lessons = document.querySelectorAll('.lesson-item');
-    const video = document.getElementById('course-video');
-    const title = document.getElementById('lesson-title');
-    const desc = document.getElementById('lesson-description');
-    const duration = document.getElementById('lesson-duration');
+const lessons = document.querySelectorAll('.lesson-item');
+const video = document.getElementById('course-video');
+const title = document.getElementById('lesson-title');
+const desc = document.getElementById('lesson-description');
+const duration = document.getElementById('lesson-duration');
+const navLinks = document.querySelectorAll('.nav-link');
 
-    lessons.forEach((item) => {
-      item.addEventListener('click', () => {
-        // Update main video
-        video.src = item.dataset.url;
-        title.innerText = item.dataset.title;
-        desc.innerText = item.dataset.desc;
-        duration.innerText = `Duration: ${item.dataset.duration}`;
+lessons.forEach((item, index) => {
+  item.addEventListener('click', () => {
+    // Atualiza o vídeo e informações
+    video.src = item.dataset.url;
+    title.innerText = item.dataset.title;
+    desc.innerText = item.dataset.desc;
+    duration.innerText = `Duração: ${item.dataset.duration}`;
 
-        // Reset active state
-        lessons.forEach((el) => {
-          el.classList.remove('bg-yellow-50');
-          el.querySelector('div:first-child').classList.remove('bg-yellow-200', 'text-yellow-700');
-          el.querySelector('div:first-child').classList.add('bg-gray-200', 'text-gray-700');
-          el.querySelector('p.text-sm').classList.remove('text-yellow-700');
-          el.querySelector('p.text-sm').classList.add('text-gray-700');
-        });
-
-        // Apply active state to selected
-        item.classList.add('bg-yellow-50');
-        item.querySelector('div:first-child').classList.remove('bg-gray-200', 'text-gray-700');
-        item.querySelector('div:first-child').classList.add('bg-yellow-200', 'text-yellow-700');
-        item.querySelector('p.text-sm').classList.remove('text-gray-700');
-        item.querySelector('p.text-sm').classList.add('text-yellow-700');
-      });
+    // Atualiza estado ativo da playlist
+    lessons.forEach(el => {
+      el.classList.remove('bg-[--var(background-secondary)]');
+      el.querySelector('div:first-child').classList.remove('bg-yellow-200','text-yellow-700');
+      el.querySelector('div:first-child').classList.add('bg-gray-200');
+      el.querySelector('p.text-sm').classList.remove('text-yellow-700');
     });
-  </script>
+
+    item.classList.add('bg-[--var(background-secondary)]');
+    item.querySelector('div:first-child').classList.remove('bg-gray-200');
+    item.querySelector('div:first-child').classList.add('bg-yellow-200','text-yellow-700');
+    item.querySelector('p.text-sm').classList.add('text-yellow-700');
+
+    // Atualiza navbar para refletir vídeo ativo
+    navLinks.forEach(link => link.classList.remove('text-yellow-600', 'font-bold'));
+    // Aqui você pode definir lógica, ex: marcar "Cursos" como ativo
+    document.querySelector('a[data-lesson="courses"]').classList.add('text-yellow-600', 'font-bold');
+  });
+});
+</script>
+
 </body>
 </html>

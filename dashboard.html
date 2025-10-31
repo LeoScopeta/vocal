@@ -1,54 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Dashboard</title>
+  <title>Painel do Estudante</title>
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 min-h-screen flex flex-col">
+<link rel="stylesheet" href="style.css"></head>
+<body class="bg-[var(--background-secondary)] min-h-screen flex flex-col">
 
   <!-- Navbar -->
   <!-- Navbar Component -->
-<nav class="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
+<nav class="bg-[var(--background)] border-b border-gray-200 shadow-sm sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
 
       <!-- Left Section: Logo -->
       <a href=".." class="flex items-center space-x-2">
-        <span class="text-2xl font-bold text-yellow-600">🎤 Vocal Academy</span>
+        <span class="text-2xl font-bold text-yellow-600">🎤 Academia Vocal</span>
       </a>
 
       <!-- Center Section: Menu Links -->
       <div class="hidden md:flex space-x-6">
-        <a href="courses.html" class="text-gray-700 hover:text-yellow-600 transition">Courses</a>
-        <a href=".." class="text-gray-700 hover:text-yellow-600">Home</a>
-        <a href="dashboard.html" class="text-gray-700 hover:text-yellow-600">My Courses</a>
-        <a href="about.html" class="text-gray-700 hover:text-yellow-600 transition">About</a>
+        <a href="courses.html" class=" hover:text-yellow-600 transition">Cursos</a>
+        <a href=".." class=" hover:text-yellow-600">Início</a>
+        <a href="dashboard.html" class=" hover:text-yellow-600">Meus Cursos</a>
+        <a href="about.html" class=" hover:text-yellow-600 transition">Sobre</a>
       </div>
 
       <!-- Right Section: User / Login -->
       <div class="hidden md:flex items-center space-x-4">
         <!-- When user is logged out -->
         <div id="guest-nav" class="flex items-center space-x-4">
-          <a href="login.html" class="text-gray-700 hover:text-yellow-600">Login</a>
+          <a href="login.html" class=" hover:text-yellow-600">Entrar</a>
           <a href="signin.html"
              class="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition">
-            Sign Up
+            Cadastrar-se
           </a>
         </div>
 
         <!-- When user is logged in -->
         <div id="user-nav" class="hidden items-center space-x-3">
-          <a href="dashboard.html" class="text-gray-700 hover:text-yellow-600 transition">Dashboard</a>
-          <img src="https://i.pravatar.cc/40" alt="Profile"
+          <a href="dashboard.html" class=" hover:text-yellow-600 transition">Painel</a>
+          <img src="https://i.pravatar.cc/40" alt="Perfil"
                class="w-10 h-10 rounded-full border cursor-pointer">
         </div>
       </div>
 
       <!-- Mobile Menu Button -->
       <button id="menu-toggle"
-              class="md:hidden text-gray-600 hover:text-yellow-600 focus:outline-none">
+              class="md:hidden  hover:text-yellow-600 focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M4 6h16M4 12h16M4 18h16" />
@@ -59,25 +59,25 @@
   </div>
 
   <!-- Mobile Dropdown -->
-  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white">
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-[var(--background)]">
     <div class="flex flex-col p-4 space-y-3">
-      <a href="courses.html" class="text-gray-700 hover:text-yellow-600">Courses</a>
-      <a href=".." class="text-gray-700 hover:text-yellow-600">Home</a>
-      <a href="dashboard.html" class="text-gray-700 hover:text-yellow-600">My Courses</a>
-      <a href="about.html" class="text-gray-700 hover:text-yellow-600">About</a>
+      <a href="courses.html" class=" hover:text-yellow-600">Cursos</a>
+      <a href=".." class=" hover:text-yellow-600">Início</a>
+      <a href="dashboard.html" class=" hover:text-yellow-600">Meus Cursos</a>
+      <a href="about.html" class=" hover:text-yellow-600">Sobre</a>
 
       <hr>
 
       <!-- Mobile auth links -->
       <div id="mobile-guest" class="flex flex-col space-y-2">
-        <a href="login.html" class="text-gray-700 hover:text-yellow-600">Login</a>
+        <a href="login.html" class=" hover:text-yellow-600">Entrar</a>
         <a href="login.html" class="bg-yellow-600 text-white text-center py-2 rounded-lg hover:bg-yellow-700 transition">
-          Sign Up
+          Cadastrar-se
         </a>
       </div>
       <div id="mobile-user" class="hidden flex flex-col space-y-2">
-        <a href="dashboard.html" class="text-gray-700 hover:text-yellow-600">Dashboard</a>
-        <a href="logout" class="text-gray-700 hover:text-red-600">Logout</a>
+        <a href="dashboard.html" class=" hover:text-yellow-600">Painel</a>
+        <a href="logout" class=" hover:text-red-600">Sair</a>
       </div>
     </div>
   </div>
@@ -104,44 +104,44 @@
 
   <!-- Main -->
   <main class="flex-1 p-6">
-    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Welcome back, Anna</h2>
+    <h2 class="text-2xl font-semibold  mb-4">Bem-vinda de volta, Anna</h2>
 
     <!-- Stats -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-      <div class="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
-        <h3 class="text-sm text-gray-500">Enrolled Courses</h3>
+      <div class="bg-[var(--background)] p-5 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-sm ">Cursos Inscritos</h3>
         <p class="text-3xl font-semibold text-yellow-600 mt-2">4</p>
       </div>
-      <div class="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
-        <h3 class="text-sm text-gray-500">Lessons Completed</h3>
+      <div class="bg-[var(--background)] p-5 rounded-xl shadow hover:shadow-lg transition">
+        <h3 class="text-sm ">Aulas Concluídas</h3>
         <p class="text-3xl font-semibold text-yellow-600 mt-2">27</p>
       </div>
     </div>
 
     <!-- Active Courses -->
     <section>
-      <h3 class="text-lg font-semibold text-gray-700 mb-3">Your Active Courses</h3>
+      <h3 class="text-lg font-semibold  mb-3">Seus Cursos Ativos</h3>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         
         <!-- Course Card -->
-        <div class="bg-white rounded-xl shadow hover:shadow-xl transition p-4 flex flex-col">
-          <h4 class="text-lg font-semibold text-gray-800">Master Your Voice: Intermediate</h4>
-          <p class="text-sm text-gray-500 mt-1 flex-1">Techniques for improving vocal control, range, and tone.</p>
+        <div class="bg-[var(--background)] rounded-xl shadow hover:shadow-xl transition p-4 flex flex-col">
+          <h4 class="text-lg font-semibold ">Domine Sua Voz: Intermediário</h4>
+          <p class="text-sm  mt-1 flex-1">Técnicas para melhorar o controle vocal, alcance e timbre.</p>
 
 
           <a href="course.html" class="mt-4 text-center py-2 w-full bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition">
-            Continue
+            Continuar
           </a>
         </div>
 
         <!-- Course Card -->
-        <div class="bg-white rounded-xl shadow hover:shadow-xl transition p-4 flex flex-col">
-          <h4 class="text-lg font-semibold text-gray-800">Beginner Warm-up Routines</h4>
-          <p class="text-sm text-gray-500 mt-1 flex-1">Start your singing journey with easy daily exercises.</p>
+        <div class="bg-[var(--background)] rounded-xl shadow hover:shadow-xl transition p-4 flex flex-col">
+          <h4 class="text-lg font-semibold ">Rotinas de Aquecimento para Iniciantes</h4>
+          <p class="text-sm  mt-1 flex-1">Comece sua jornada de canto com exercícios diários fáceis.</p>
 
 
           <a href="course.html" class="mt-4 text-center py-2 w-full bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition">
-            Continue
+            Continuar
           </a>
         </div>
 
@@ -150,8 +150,8 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-white py-4 text-center text-gray-500 text-sm border-t">
-    © 2025 Vocal Academy. All rights reserved.
+  <footer class="bg-[var(--background)] py-4 text-center  text-sm border-t">
+    © 2025 Academia Vocal. Todos os direitos reservados.
   </footer>
 
 </body>
